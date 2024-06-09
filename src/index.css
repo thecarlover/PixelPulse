@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.grid {
+    display: grid;
+    place-items: center;
+  }
