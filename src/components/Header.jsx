@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -10,7 +11,7 @@ const Header = () => {
   return (
     <header className={`bg-gradient-to-r from-purple-500 to-pink-500 text-white py-4 px-6 md:flex md:justify-between md:items-center ${menuOpen ? 'h-screen' : 'auto'}`}>
       <div className="flex justify-between items-center">
-        <div className="text-2xl font-bold">PixelPulse</div>
+        <Link to="/" className="text-2xl font-bold">PixelPulse</Link>
         <button className="md:hidden" onClick={toggleMenu}>
           {menuOpen ? (
             <svg className="w-8 h-8 text-white hover:text-pink-200 transition duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -24,10 +25,9 @@ const Header = () => {
         </button>
       </div>
       <nav className={`md:flex ${menuOpen ? 'block' : 'hidden'} mt-4 md:mt-0 w-full md:w-auto`}>
-        <a href="#" className="block mt-4 md:inline-block md:mt-0 mr-4 hover:text-pink-200 transition duration-300">Home</a>
-        <a href="#" className="block mt-4 md:inline-block md:mt-0 mr-4 hover:text-pink-200 transition duration-300">About</a>
-        <a href="#" className="block mt-4 md:inline-block md:mt-0 mr-4 hover:text-pink-200 transition duration-300">Games</a>
-        <a href="#" className="block mt-4 md:inline-block md:mt-0 hover:text-pink-200 transition duration-300">Contact</a>
+        <Link to="/" className="block mt-4 md:inline-block md:mt-0 mr-4 hover:text-pink-200 transition duration-300">Home</Link>
+        <Link to="/about" className="block mt-4 md:inline-block md:mt-0 mr-4 hover:text-pink-200 transition duration-300">About</Link>
+        <Link to="/contact" className="block mt-4 md:inline-block md:mt-0 hover:text-pink-200 transition duration-300">Contact</Link>
       </nav>
     </header>
   );
